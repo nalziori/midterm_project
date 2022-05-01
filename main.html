@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>얼마든 원하는 곳에서 구매하세요! 얼마든</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="content">
+            <style>
+            body{
+                margin:0;
+                padding:0;
+                height: 100%;
+            }
+            #wrapper{
+                min-height: 100%;
+                position: relative;
+            }
+            #content{
+                padding-bottom: 130px;
+            }
+           
+            header {
+                width: 100%;
+                height: 150px;
+            }
+
+            #logo {
+                width: 225px;
+                height: 135px;
+                margin: 1px;
+                border: gray 2px;
+                float: left;
+                position: relative;
+                top: 10px;
+            }
+
+            #search {
+                width: 580px;
+                height: 50px;
+                margin: 1px;
+                border: gray solid 2px;
+                float: left;
+                position: relative;
+                top: 50px;
+            }
+
+            #search_box {
+                width: 500px;
+                height: 40px;
+                font-size: 10px;
+                border: dodgerblue solid 5px;
+                color: black;
+            }
+
+            #search_button {
+                width: 60px;
+                height: 40px;
+                font-size: 15px;
+                background-color: dodgerblue;
+                color: white;
+            }
+
+           
+            aside {
+                width: 20%;
+                height: 1200px;
+                font-size: 15px;
+                position: relative;
+                float: right;
+                text-align: center;
+                border: gray solid 2px;
+            }
+
+            section{
+                width:60%;
+                height: 0; 
+                margin-right:0px;
+                float:left;
+            }
+            div#category {
+                height: 70%;
+            }
+            #category.section{
+                width:160px;
+            }
+            a {
+                text-decoration-line: none;
+                color: black;
+            }
+            footer{
+                width:100%;
+                height: 130px;
+                background-color: #767474;
+                text-align: center;
+                color: white;
+                position: relative;
+                float:left;
+            }
+        </style>
+        <header>
+            <div id="logo">
+                <a href="main.html" target="_self"><img src="logo1.png"></a>
+            </div>
+            <div id="search" value="검색창">
+                <input type="text" id="search_box" size="20" maxlength="20" value="네이버 쇼핑에 검색">
+                <input type="button" id="search_button" value="검색" onclick="searching()">
+
+                <script>
+                    function searching() {
+                        var obj = document.getElementById("search_box")
+                        var url = "https://search.shopping.naver.com/search/all?query=" + obj.value;
+                        location.href=url;
+                    }
+                </script>
+            </div>
+        </header>
+
+        <section>
+            <div id="phone">
+                <h3>스마트폰</h3><hr>
+                <p>핸드폰 바꿀 때 됐다! 삼성 vs 애플</p>
+                <a href="https://www.samsung.com/sec/" target="_black"><img src="삼성로고_축소.jpg"></a> &nbsp;
+                <img src="vs.png">
+                <a href="https://www.apple.com/kr/" target="_blank"><img src="애플로고.jpg"></a><hr>
+            </div>
+            <div id="food">
+                <h3>먹거리</h3><hr>
+                <p>맛있는 거 옆에 맛있는 거!</p>
+                <a href="https://www.kurly.com/shop/main/" target="_blank"><img src="마켓컬리.jpg"></a>
+                <img src="vs.png">
+                <a href="https://www.coupang.com/np/categories/393760" target="_blank"><img src="쿠팡.jpg"></a><hr>
+            </div>
+            <div id="interior">
+                <h3>인테리어</h3><hr>
+                <p>여기가 인테리어 맛집!</p>
+                <a href="https://www.ikea.com/kr/ko/" target="_blank"><img src="이케아.jpg"></a>
+                <img src="vs.png">
+                <a href="https://ohou.se/" target="_blank"><img src="오늘의집.jpg"></a><hr>
+            </div>
+            <div id="book">
+                <h3>서적</h3><hr>
+                <p>우리나라 책 여기 다 있다!</p>
+                <a href="http://www.kyobobook.co.kr/index.laf" target="_blank"><img src="교보문고.jpg"></a>
+                <img src="vs.png">
+                <a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img src="알라딘.jpg"></a><hr>
+            </div>
+            <div id="cosmetic">
+                <h3>코스메틱</h3><hr>
+                <p>국내 최대 드럭스토어!</p>
+                <a href="https://www.oliveyoung.co.kr/store/main/main.do?oy=0" target="_blank"><img src="올리브영.jpg"></a>
+                <img src="vs.png">
+                <a href="https://www.innisfree.com/kr/ko/Main.do" target="_blank"><img src="이니스프리.jpg"></a><hr>
+            </div>
+        </section>
+
+
+        <aside>
+            <div id="category">
+
+                <p>카테고리</p>
+                <hr>
+
+                <div>
+                    <p>물품 카테고리</p>
+                    <hr>
+                    <a href="electronics.html" target="_blank">전자제품</a></p>
+                    <a href="food.html" target="_blank">식료품</a></p>
+                    <a href="interior.html" target="_blank">인테리어</a></p>
+                    <a href="book.html" target="_blank">서적</a></p>
+                    <a href="cosmetic.html" target="_blank">코스메틱</a></p></br>
+                    <hr>
+                    <p>브랜드 카테고리</p>
+                    <hr>
+                    <p>전자제품</p>
+                    <a href="https://www.samsung.com/sec/" target="_blank">삼성전자</a></p>
+                    <a href="https://www.lge.co.kr/" target="_blank">LG전자</a></p>
+                    <hr>
+                    <p>식료품</p>
+                    <a href="https://www.kurly.com/shop/main/" target="_blank">마켓컬리</a></p>
+                    <a href="https://www.coupang.com/np/categories/393760" target="_blank">쿠팡 로켓프레시</a></p>
+                    <hr>
+                    <p>인테리어</p>
+                    <a href="https://www.ikea.com/kr/ko/" target="_blank">이케아</a></p>
+                    <a href="https://ohou.se/" target="_blank">오늘의 집</a></p>
+                    <hr>
+                    <p>서적</p>
+                    <a href="http://www.kyobobook.co.kr/index.laf" target="_blank">교보문고</a></p>
+                    <a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank">알라딘</a></p>
+                    <hr>
+                    <p>코스메틱</p>
+                    <a href="https://www.oliveyoung.co.kr/store/main/main.do?oy=0" target="_blank">올리브영</a></p>
+                    <a href="https://www.innisfree.com/kr/ko/Main.do" target="_blank">이니스프리</a></p>
+                    <hr>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>
+            경북대학교 컴퓨터학부 글로벌SW융합전공 20181141333 최재영
+        </p>
+        <p>
+            프로젝트 얼마든 Copyright © 2022.05.01 - Choi JaeYoung. All Rights Reserved.
+        </p>
+        <p>
+            E-mail : wodud00744@gmail.com 
+        </p>
+    </footer>
+    </div>
+</body>
+
+</html>

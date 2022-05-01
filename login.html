@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>얼마든</title>
+
+    <style>
+        body{
+            background-color: #815ad5;
+        }
+        div#loginPage{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            left: 25%;
+            top: 20%;
+            text-align:center;            
+        }
+        img{
+            width: 250px;
+            height: 150px;
+            border: solid 2px gray;
+        }
+        table{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //로그인 페이지 만들기
+        var IDs=["aaaaa"];
+        var PWs=["aaaaa"];
+        var id_index=1;
+        var pw_index=1;
+
+
+        function login()
+        {
+            var id=document.getElementById('loginId').value;
+            var pw=document.getElementById('loginPw').value;
+            if(IDs.length == 0)
+            {
+                alert("아이디가 하나도 없습니다. 회원가입 해주세요!");
+            }
+            var flag=0;
+            for(var i=0;i<IDs.length;i++)
+            {
+                if(id!==IDs[i])
+                {
+                    flag=1;
+                }
+            }
+            if(flag)
+            {
+                alert("아이디가 없습니다. 회원가입 해주세요.");
+            }
+            flag=0;
+            for(var i=0;i<IDs.length;i++)
+            {
+                if(id==IDs[i] && pw==PWs[i])
+                {
+                    alert("로그인 되었습니다.");
+                    location.href = 'main.html';
+                    break;
+                }
+                else if(id !== IDs[i] || pw !== PWs[i])
+                {
+                    flag=1;
+                }
+            }
+            if(flag)
+            {
+                alert("아이디나 비밀번호가 잘못되었습니다. 다시입력해주세요.");
+            }
+        }
+    </script>
+    <script>
+        function signin(){
+            var newId = prompt("아이디를 입력하세요.", "5자에서 15자 이내 영어와 숫자만");
+            for(var i=0;i<IDs.length;i++)
+            {
+                if(newId === IDs[i])
+                {
+                    alert("아이디가 중복되었습니다. 다시 입력해주세요.");
+                    signin();
+                }
+            }
+            check=1; //비밀번호 확인
+
+            while(check)
+            {
+                var newPw = prompt("비밀번호를 입력하세요.", "5자에서 15자 이내 영어와 숫자만");
+                var newPw_ck = prompt("비밀번호를 다시 한번 입력해주세요.");
+                if(newPw===newPw_ck)
+                {
+                    IDs[id_index] = newId;
+                    PWs[pw_index] = newPw;
+                    check=0;
+                    alert("회원가입이 완료되었습니다.");
+                }
+                else
+                {
+                    alert("비밀번호가 다릅니다. 다시 입력해주세요");
+                }
+            }
+        }
+    </script>
+    <div id="loginPage">
+        <img src="logo1.png">
+   
+        <table align="center" bordercolor="#CCDDFF" border="1" cellspacing="0"> 
+          <tr> 
+            <th colspan="2" bgcolor="#CCDDFF">회원 가입 정보</th> 
+          </tr> 
+          <tr> 
+            <th bgcolor="#EEEEEE">아이디:</th> 
+            <td> 
+              <input type="text" id="loginId" value="" minlength="5" maxlength="15" size="15" required/>  
+            </td> 
+          </tr> 
+          <tr> 
+            <th bgcolor="#EEEEEE">비밀번호:</th> 
+            <td> 
+              <input type="password" id="loginPw" value="" minlength="5" maxlength="15" size="15" required/>
+            </td> 
+          </tr> 
+        </table> 
+        <div class="" align="center"> 
+          <br> 
+          <input type="button" id="loginButton" onclick="login()" value="로그인"> 
+          <input type="button" id="sign_in" onclick="signin()"  value="회원가입"> 
+        </div> 
+  </div>
+</body>
+
+</html>
